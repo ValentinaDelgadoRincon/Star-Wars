@@ -1,0 +1,17 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+.navegador{
+    display:flex;
+}
+@font-face {
+    font-family:"starwars";
+    src: url(./fuentes/SF\ Distant\ Galaxy\ Alternate.ttf)
+;}
+.titulo{
+    font-family: starwars;
+    font-size: 100rem; 
+}
