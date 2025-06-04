@@ -31,24 +31,7 @@ body{
     color: white;
 }
 .flecha{
-    display: flex;
-    position: relative;
-    align-items: flex-end;
-}
-.flecha img{
-    margin-top: 20%;
-    display: flex;
-    position: relative;
-    width: 20vw;
-}
-
-.texto{
-    position: absolute;
-    color: black;
-    margin-bottom: 3.5%;
-    margin-left: 7%;
-    font-size:1.5rem
-
+    margin-top: 25%;
 }
 .navbar{
     display: flex;
