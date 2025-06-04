@@ -47,3 +47,45 @@ body{
     border: 2px solid white;
     justify-content: space-around;
 }
+.personajes{
+    background: url(./multimedia/fondo-p.png);
+    display: flex;
+    flex-direction: column;
+}
+.sub{
+    text-align: end;
+    padding: 2vh;
+    font-family: "starwars";
+    color: black;
+    text-shadow: 0px 0px 0 yellow;
+    font-size:1.5rem ;
+}
+.buscar{
+    margin-left: 69%;
+    border-radius: 10px;
+    width: 30vw;
+    padding: 1.5vh;
+}
+.personajes.box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap:1.5rem
+}
+.personajes.box-container.box{
+    flex: 1 1 30rem;
+    box-shadow: 0 .5rem 1.5rem ;
+    border-radius: .5rem;
+    position: relative;
+}
+.personajes.box-container.box .imagen{
+    position: relative;
+    text-align: center;
+    padding-top: 2rem;
+    overflow: hidden;
+}
+.personajes.box-container.box .imagen img{
+    height: 25rem;
+}
+span{
+    color:white
+}
