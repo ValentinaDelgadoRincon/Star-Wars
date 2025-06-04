@@ -23,6 +23,8 @@ body{
     width: 40%;
     padding-top:1vh;
     padding-left: 5vh;
+    color: black;
+    text-shadow: 5px 5px 0 yellow;
 }
 .navbar a{
     font-size: 1.7rem;
@@ -32,15 +34,21 @@ body{
     display: flex;
     position: relative;
     align-items: flex-end;
-    justify-content: center;
 }
 .flecha img{
+    margin-top: 20%;
+    display: flex;
+    position: relative;
     width: 20vw;
 }
 
 .texto{
     position: absolute;
-    color: white;
+    color: black;
+    margin-bottom: 3.5%;
+    margin-left: 7%;
+    font-size:1.5rem
+
 }
 .navbar{
     display: flex;
