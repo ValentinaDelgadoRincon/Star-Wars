@@ -4,14 +4,54 @@
     box-sizing: border-box;
     text-decoration: none;
 }
-.navegador{
-    display:flex;
+body{
+    background:url(./multimedia/video-inicio.gif) no-repeat;
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
 }
 @font-face {
     font-family:"starwars";
     src: url(./fuentes/SF\ Distant\ Galaxy\ Alternate.ttf)
-;}
-.titulo{
+}
+.navegador{
+    display:flex;
+}
+.titulo1{
     font-family: starwars;
-    font-size: 100rem; 
+    font-size: 6rem;
+    width: 40%;
+    padding-top:1vh;
+    padding-left: 5vh;
+}
+.navbar a{
+    font-size: 1.7rem;
+    color: white;
+}
+.flecha{
+    display: flex;
+    position: relative;
+    align-items: flex-end;
+    justify-content: center;
+}
+.flecha img{
+    width: 20vw;
+}
+
+.texto{
+    position: absolute;
+    color: white;
+}
+.navbar{
+    display: flex;
+    width: 100%;
+    height: 20%;
+    gap: 5vh;
+    margin-top: 5vh;
+    margin-left:8vh;
+    background-color: black;
+    padding: 2vh;
+    border-radius:50px;
+    border: 2px solid white;
+    justify-content: space-around;
 }
