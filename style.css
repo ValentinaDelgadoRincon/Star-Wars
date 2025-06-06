@@ -14,6 +14,10 @@
     font-family:"starwars";
     src: url(./fuentes/SF\ Distant\ Galaxy\ Alternate.ttf)
 }
+@font-face{
+    font-family: "adorable";
+    src: url(./fuentes/Super\ Adorable.ttf);
+}
 .navegador{
     display:flex;
 }
@@ -47,18 +51,20 @@
     border: 2px solid white;
     justify-content: space-around;
 }
-.personajes, .planetas,.juegos{
+.personajes, .planetas,.juegos,.series{
     width: 100%;
-    background: url(./multimedia/fondo-1.png);
+    background: url(./multimedia/fondo-juegos.png);
     display: flex;
     flex-direction: column;
 }
+
 .sub{
     text-align: end;
     padding: 2vh;
     font-family: "starwars";
-    color: black;
-    text-shadow: 0px 0px 0 yellow;
+    color: white;
+    text-shadow: 5px 5px 0 fuchsia;
+    letter-spacing: 5px;
     font-size:1.5rem ;
 }
 .buscar{
@@ -175,10 +181,46 @@
 }
 
 .carrusel-3{
+    border-top: 5px solid yellow;
     display: flex;
     margin-top: 60vh;
+    margin-left: 5%;
+    margin-right: 5%;
     justify-content: space-around;
+    padding: 5vh;
+    
 }
 .carrusel-3 img{
-    width: 20vw;
+    width: 15vw;
+    overflow: hidden;
+    position: relative;
+}
+.series p{
+    color: #13b5eb;
+    text-align: center;
+    font-family: "adorable";
+    font-size: 4rem;
+}
+.cuadro-1{
+    display: flex;
+
+    justify-content:center;
+    gap:2vh
+}
+.cuadro-1 img{
+    display: flex;
+    width: 18vw;
+}
+.inferior{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "parte1 parte2";
+}
+.cuadro-2{
+    grid-area: parte1;
+    place-items: center;
+}
+.cuadro-3{
+    grid-area:  parte2;
+    place-items: center;
 }
