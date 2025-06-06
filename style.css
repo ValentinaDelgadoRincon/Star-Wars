@@ -194,6 +194,7 @@
     width: 15vw;
     overflow: hidden;
     position: relative;
+    margin-bottom: 5vh;
 }
 .series p{
     color: #13b5eb;
@@ -203,13 +204,12 @@
 }
 .cuadro-1{
     display: flex;
-
     justify-content:center;
     gap:2vh
 }
 .cuadro-1 img{
     display: flex;
-    width: 18vw;
+    width: 10vw;
 }
 .inferior{
     display: grid;
