@@ -36,10 +36,7 @@
     font-size: 1.7rem;
     color: white;
 }
-.flecha{
-    margin-top: 25%;
-    margin-left: 5vh;
-}
+
 .navbar{
     display: flex;
     width: 70%;
@@ -310,11 +307,6 @@
     height:100vh;
     background-position: center;
 }
-.flecha img{
-    margin-top: 100%;
-    margin-left: 0vh;
-    width: 60%;
-}
  .box-container {
     display: flex;
     flex-direction: column;
@@ -381,5 +373,4 @@
 .planetas h2{
     margin-top: 3vh;
 }
-
 }
