@@ -42,18 +42,17 @@
 }
 .navbar{
     display: flex;
-    width: 60%;
-    height: 10%;
-    gap: 5vh;
+    width: 70%;
+    height: 30%;
+    gap: 2vh;
+    padding: 2vh;
     margin-top: 5vh;
-    margin-left:80vh;
+    margin-left:8vh;
     background-color: black;
     border-radius:50px;
     border: 2px solid white;
     justify-content: space-around;
     align-items: center;
-    position: fixed;
-    z-index: 1000;
 }
 .personajes, .planetas,.series{
     width: 100%;
@@ -103,23 +102,7 @@
 .box img{
     padding: 2vh;
 }
-/*.personajes .box-container .box .imagen .texto{
-    position: absolute;
-    bottom: -7rem;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: space-around;
-}
-.personajes .box-container .box:hover .imagen .texto{
-    bottom: 0;
-}
-.personajes .box-container .box .imagen .texto .span{
-    height: 5rem;
-    line-height: 5rem;
-    font-size: 2rem;
-    width: 50%;
-}   REVISAR Y ARREGLAR*/ 
+
 .planetas h2{
     color: black;
     text-shadow: -1px -1px 0 yellow;
@@ -197,17 +180,17 @@
 }
 
 .carrusel-3{
-    border-top: 5px solid yellow;
     display: flex;
-    margin-top: 60vh;
+    margin-top: 70vh;
     margin-left: 5%;
     margin-right: 5%;
     justify-content: space-around;
     padding: 5vh;
+    border-top: 5px solid yellow;
     
 }
 .carrusel-3 img{
-    width: 15vw;
+    width: 9vw;
     overflow: hidden;
     position: relative;
     margin-bottom: 5vh;
@@ -240,12 +223,7 @@
     grid-area:  parte2;
     place-items: center;
 }
-.informacion{
-    width: 100%;
-    height: 100vh;
-    background: url(./multimedia/starwars.jpg) no-repeat;
-    background-size: cover;
-}
+
 .more{
     display: flex;
     justify-content:space-around;
@@ -262,4 +240,19 @@
     color: black;
     text-shadow: 5px 5px 0 yellow;
     text-align: center;
+}
+
+
+.informacion{
+    width: 100%;
+    height: 100vh;
+    background: url(./multimedia/fondo-f.webp)no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+.espacial{
+    display: flex;
+    justify-content: center;
+    margin-top:5vh;
 }
