@@ -256,55 +256,130 @@
     justify-content: center;
     margin-top:5vh;
 }
-header #toggler {
-    display: none;
+.fas.fa-bars {
+  font-size: 30px;
+  color: white;
+  display: none;
+  cursor: pointer;
 }
-
-header .fa-bars {
-    font-size: 3rem;
-    color: #333;
-    border-radius: .5rem;
-    padding: .5rem 1.5rem;
-    cursor: pointer;
-    border: .1rem solid rgba(0, 0, 0, .3);
-    display: none;
+#toggler {
+  display: none;
 }
-@media (max-width:800px){
-     header .fa-bars{
-        display: block;
+ .navbar {
+      display: flex;
+      gap: 1rem;
     }
 
-    header .navbar{
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: #eee;
-        border-top: .1rem solid rgba(0, 0, 0, .1);
-        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-    }
+@media (max-width: 800px) {
+  .navbar {
+    display: none;
+    flex-direction: column;
+    background-color: black;
+    position: absolute;
+    top: 60%;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+  }
 
-    header #toggler:checked ~ .navbar{
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-    }
+  #toggler:checked ~ .navbar {
+    display: flex;
+  }
 
-    header .navbar a{
-        margin: 1.5rem;
-        padding: 1.5rem;
-        background: #fff;
-        border: .1rem solid rgba(0, 0, 0, .1);
-        display: block;
-    }
+  .fas.fa-bars {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  .navbar a {
+        color: white;
+        padding: 1rem;
+        text-decoration: none;
+      }
+
     .titulo1{
         width: 100%;
-        font-size: 2rem;
+        font-size: 3rem;
         text-align: center;
         padding-top:5vh;
         padding-left: 0vh;
 }
 .inicio{
     width: 100%;
-    height:90vh;
+    height:100vh;
     background-position: center;
 }
+.flecha img{
+    margin-top: 100%;
+    margin-left: 0vh;
+    width: 60%;
+}
+ .box-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    margin-top: 5vh;
+}
+.box-container img{
+    width: 75%;
+    border: 4px solid white;
+}
+.box{
+    border: 0;
+}
+.buscar{
+    margin-left:40%;
+    width: 55vw;
+    padding: 1.5vh;
+}
+.contenido-p,.contenido-n{
+    justify-content: space-around;
+    font-size: 0.8rem;
+    margin-top: 2vh;
+}
+.contenido-p p{
+    font-size: 1rem;
+}
+.contenido-n p{
+    font-size: 1rem;
+}
+.series p{
+    font-size: 2rem;
+}
+.cuadro-2 img, .cuadro-3 img{
+    width: 20vw;
+}
+.cuadro-3,.cuadro-2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2vh;
+}
+.cuadro-1 img{
+    width: 25vw;
+}
+.final{
+    font-size: 2.5rem;
+}
+.more img{
+    width: 15vw;
+}
+.more{
+    padding: 0;
+    margin-top: 5vh;
+}
+.espacial{
+    margin-top:7vh;
+}
+.informacion{
+    height: 70vh;
+}
+.planetas{
+    justify-content: center;
+}
+.planetas h2{
+    margin-top: 3vh;
+}
+
 }
