@@ -388,17 +388,10 @@
 .planetas h2{
     margin-top: 3vh;
 }
-.carrusel-3 img{
-    width: 20vw;
-    margin-top: 5vh;
-    
+.carrusel img{
+    width: 30vw;
 }
 .carrusel-3{
-    margin-left: 0%;
-    margin-right: 0%;
-    margin-top: 70vh;
-    padding: 0;
-    gap: 2vh;
-    
+    width:90vw;
 }
 }
