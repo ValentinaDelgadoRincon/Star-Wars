@@ -45,9 +45,6 @@
     padding: 2vh;
     margin-top: 5vh;
     margin-left:8vh;
-    background-color: black;
-    border-radius:50px;
-    border: 2px solid white;
     justify-content: space-around;
     align-items: center;
 }
@@ -214,11 +211,25 @@
 .cuadro-1{
     display: flex;
     justify-content:center;
-    gap:2vh
+    gap:2vh;
+    position: relative;
 }
 .cuadro-1 img{
     display: flex;
     width: 10vw;
+}
+.ver{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    display: none;
+}
+.cuadro-1:hover .ver:hover{
+    display: block;
+}
+.cuadro-1:hover{
+    cursor: pointer;
 }
 .inferior{
     display: grid;
@@ -241,6 +252,10 @@
 }
 .more img{
     width: 10vw;
+}
+.more img:hover{
+    transform: scale(1.2);
+    transform: all 0.3s ease
 }
 .final{
     font-family: starwars;
