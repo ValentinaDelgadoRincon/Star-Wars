@@ -1,0 +1,1 @@
+const contenedor = document.querySelector
