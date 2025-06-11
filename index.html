@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STAR WARS</title>
     <link rel="stylesheet" href="./style.css">
-    <script type="module" defer src="data.js"></script>
+    <script type="module" defer src="componentes/ListaPersonajes.js"></script>
+    <script type="module" defer src="componentes/ListaPlanetas.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
 
 </head>
@@ -62,26 +63,7 @@
 
         <section class="contenido-p">
 
-            <article class="carrusel-1">
-                <p>TATOOINE</p>
-                <img src="./multimedia/tatooine.jpeg" alt="plantilla">
-                <span>Descripción del planeta y naves</span>
-
-            </article>
-
-            <article class="carrusel-1">
-                <p>ALDERAAN</p>
-                <img src="./multimedia/alderaan.jpeg" alt="plantilla">
-                <span>Descripción del planeta y naves</span>
-
-            </article>
-
-            <article class="carrusel-1">
-                <p>YAVIN IV</p>
-                <img src="./multimedia/yavin-4.jpeg" alt="plantilla">
-                <span>Descripción del planeta y naves</span>
-
-            </article>
+            <lista-planetas />
 
         </section>
 

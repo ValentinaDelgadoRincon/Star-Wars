@@ -100,6 +100,7 @@ class ListaPersonajes extends HTMLElement {
 }
 customElements.define('lista-personaje', ListaPersonajes);
 
+
 document.addEventListener("DOMContentLoaded", () => {
     const enlaces = document.querySelectorAll(".navbar a");
     const secciones = document.querySelectorAll(".seccion");
