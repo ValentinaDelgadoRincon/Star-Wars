@@ -4,9 +4,7 @@
     box-sizing: border-box;
     text-decoration: none;
 }
-html {
-    scroll-behavior: smooth;
-  }
+
   
 body{
      background-color: #021427;
