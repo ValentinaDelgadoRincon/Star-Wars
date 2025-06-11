@@ -80,7 +80,7 @@ render(users){
     <div class="contenedor">
     <div class="espacio-tarjeta" id="user-container"></div>
     <div class="video">
-     <video src="multimedia/video-off.mp4" autoplay></video>
+     <video src="multimedia/video-off.mp4" autoplay loop></video>
      </div>
      </div>
      
