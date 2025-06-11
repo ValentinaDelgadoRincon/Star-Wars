@@ -28,18 +28,21 @@ renderError(){
 render(users){
     this.shadowRoot.innerHTML=`
     <style>
-    h2{
-    font-family:Arial;
-    }
-    .grid{
+
+    .espacio-tarjeta{
     display:grid;
-    grid-template-comlumns:repeat(auto-fill,minmax(200px, 1fr));
+    grid-template-columns:1fr 1fr;
     gap:16px;
     padding:0;
+    padding:5vh;
+    width:50%;
     }
     .tarjetas{
-    background:#ffffff;
+    text-align:center;
+    background:black;
     border:1px solid #ccc;
+    color:yellow;
+    line-height: 1rem;
     }
     border-radius:8px;
     padding:16px;
@@ -47,17 +50,16 @@ render(users){
     font-family:Arial;
     }
     .tarjetas h3{
-    margin-top:0;
-    font-size:18px;
-    color:#333;
+    font-size:20px
+    color:yellow;
     }
     .tarjetas p{
     margin: 4px 0;
     font-size:14px;
+    color: white;
     }
     </style>
-    <h2>Personajes de Star Wars</h2>
-    <div class="grid" id="user-container"></div>
+    <div class="espacio-tarjeta" id="user-container"></div>
     `;
     const container=this.shadowRoot.querySelector('#user-container');
     users.forEach(user =>{
