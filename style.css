@@ -358,7 +358,7 @@ body{
 .informacion {
     width: 100%;
     height: 116.5vh;
-    
+    background: url(multimedia/final-fondo.html) no-repeat;
     background-size: cover;
     display: flex;
     flex-direction: column;
