@@ -28,7 +28,13 @@ renderError(){
 render(users){
     this.shadowRoot.innerHTML=`
     <style>
-
+    .contenedor{
+    display:flex;
+    gap:2vh;
+    padding:5vh;
+    width:100%;
+    box-sizing:border-box;
+    }
     .espacio-tarjeta{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -58,8 +64,26 @@ render(users){
     font-size:14px;
     color: white;
     }
+    .video{
+        flex:1;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+    .video video {
+        width: 100%;
+        max-width: 400px;
+        border: 2px solid white;
+        border-radius: 8px;
+    }
     </style>
+    <div class="contenedor">
     <div class="espacio-tarjeta" id="user-container"></div>
+    <div class="video">
+     <video src="multimedia/video-off.mp4" autoplay></video>
+     </div>
+     </div>
+     
     `;
     const container=this.shadowRoot.querySelector('#user-container');
     users.forEach(user =>{
