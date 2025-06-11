@@ -97,6 +97,13 @@ body{
     display: flex;
     flex-direction: column;
 }
+.informacion{
+    background: url(multimedia/fondo-final.webp) no-repeat;
+    width: 100%;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
 .series{
      width: 100%;
     height: 240vh;
@@ -108,11 +115,9 @@ body{
 .juegos {
     width: 100%;
     height: 140vh;
-    
     background-size: cover;
     display: flex;
     flex-direction: column;
-    margin-top: 20vh;
 }
 
 .juegos .sub {
@@ -351,7 +356,7 @@ body{
     display: flex;
     justify-content: space-around;
     align-self: center;
-    z-index: 2;
+    margin-bottom: 20vh;
 }
 .more img {
     width: 10vw;
@@ -374,15 +379,6 @@ body{
     text-shadow: 10px 10px 10px black;
 }
 
-
-.informacion {
-    width: 100%;
-    height: 110vh;
-    background: url(multimedia/fondo-final.webp) no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-}
 
 
 .icono-menu {
@@ -408,7 +404,8 @@ body{
     height: 60vh;
     overflow: hidden;
     border-radius: 15px;
-    margin-top: 30vh;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
 }
 
 input[type="radio"] {
