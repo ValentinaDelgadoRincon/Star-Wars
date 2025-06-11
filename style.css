@@ -4,9 +4,7 @@
     box-sizing: border-box;
     text-decoration: none;
 }
-html {
-    scroll-behavior: smooth;
-  }
+
   
 body{
      background-color: #021427;
@@ -683,10 +681,13 @@ input[type="radio"] {
     height: 0;
     overflow: hidden;
     pointer-events: none;
-  }
-  
-  .seccion.active {
+    opacity: 0;
+}
+
+.seccion.active {
+    height: auto;
+    overflow: visible;
+    pointer-events: auto;
     opacity: 1;
-    height: 100%;
-  }
-  
+}
+

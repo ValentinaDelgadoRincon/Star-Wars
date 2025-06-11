@@ -1,32 +1,32 @@
-class ListaPersonajes extends HTMLElement{
-    constructor(){
+class ListaPersonajes extends HTMLElement {
+    constructor() {
         super();
         this.attachShadow({ mode: 'open' });
     }
-    connectedCallback(){
+    connectedCallback() {
         this.cargarUsuarios()
     }
 
 
-    async cargarUsuarios(){
-        try{
+    async cargarUsuarios() {
+        try {
             const respuesta = await fetch('https://swapi.py4e.com/api/people/');
             const datos = await respuesta.json();
-            
+
             this.render(datos.results);
-        }catch(error){
+        } catch (error) {
             this.renderError();
-            console.error('Error cargando personajes',error);
+            console.error('Error cargando personajes', error);
         }
     }
 
-renderError(){
-    this.shadowRoot.innerHTML=`<p style="color:red;">Error al cargar los personajes</p>`;
-}
+    renderError() {
+        this.shadowRoot.innerHTML = `<p style="color:red;">Error al cargar los personajes</p>`;
+    }
 
 
-render(users){
-    this.shadowRoot.innerHTML=`
+    render(users) {
+        this.shadowRoot.innerHTML = `
     <style>
     .contenedor{
     display:flex;
@@ -85,45 +85,45 @@ render(users){
      </div>
      
     `;
-    const container=this.shadowRoot.querySelector('#user-container');
-    users.forEach(user =>{
-        const tarjetas=document.createElement('div');
-        tarjetas.classList.add('tarjetas');
-        tarjetas.innerHTML=`
+        const container = this.shadowRoot.querySelector('#user-container');
+        users.forEach(user => {
+            const tarjetas = document.createElement('div');
+            tarjetas.classList.add('tarjetas');
+            tarjetas.innerHTML = `
         <h3>${user.name}</h3>
         <p><strong>Altura:</strong>${user.height} cm</p>
         <p><strong>Genero:</strong>${user.gender} </p>
         `;
-        container.appendChild(tarjetas);
-    });
+            container.appendChild(tarjetas);
+        });
+    }
 }
-}
-customElements.define('lista-personaje', ListaPersonajes); 
+customElements.define('lista-personaje', ListaPersonajes);
 
 document.addEventListener("DOMContentLoaded", () => {
     const enlaces = document.querySelectorAll(".navbar a");
     const secciones = document.querySelectorAll(".seccion");
-  
-    
+
+
     secciones.forEach((sec, i) => {
-      if (i === 0) sec.classList.add("active");
+        if (i === 0) sec.classList.add("active");
     });
-  
+
     enlaces.forEach(enlace => {
-      enlace.addEventListener("click", e => {
-        e.preventDefault();
-        const targetId = enlace.getAttribute("href").substring(1); 
-        const targetSection = document.getElementById(targetId);
-  
-        if (!targetSection) return;
-  
-        secciones.forEach(sec => sec.classList.remove("active"));
-  
-        targetSection.classList.add("active");
-  
-        targetSection.scrollIntoView({ behavior: "smooth" });
-      });
+        enlace.addEventListener("click", e => {
+            e.preventDefault();
+            const targetId = enlace.getAttribute("href").substring(1);
+            const targetSection = document.getElementById(targetId);
+
+            if (!targetSection) return;
+
+            secciones.forEach(sec => sec.classList.remove("active"));
+
+            targetSection.classList.add("active");
+
+            targetSection.scrollIntoView({ behavior: "smooth" });
+        });
     });
-  });
-  
-  
+});
+
+
