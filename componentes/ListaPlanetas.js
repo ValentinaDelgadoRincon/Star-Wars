@@ -10,7 +10,7 @@ class ListaPlanetas extends HTMLElement{
     async cargarPlanetas(){
         try{
             const respuesta=await fetch('https://swapi.py4e.com/api/planets/');
-            const datos=await respuesta.json();
+            const datos = await respuesta.json();
             this.render(datos.results); 
         }catch (error){
             this.renderError();
