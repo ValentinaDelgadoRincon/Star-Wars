@@ -4,6 +4,10 @@
     box-sizing: border-box;
     text-decoration: none;
 }
+html {
+    scroll-behavior: smooth;
+  }
+  
 body{
      background-color: #021427;
 }
@@ -676,4 +680,16 @@ input[type="radio"] {
     .carrusel-3 {
         width: 90vw;
     }
-}
+    
+} 
+.seccion {
+    height: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  
+  .seccion.active {
+    opacity: 1;
+    height: 100%;
+  }
+  
