@@ -39,7 +39,7 @@ render(users){
     }
     .tarjetas{
     text-align:center;
-    background:black;
+    background-color: #3e565994;
     border:1px solid #ccc;
     color:yellow;
     line-height: 1rem;
