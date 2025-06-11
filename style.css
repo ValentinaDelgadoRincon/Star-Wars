@@ -1,88 +1,127 @@
-*{
-    margin:0;
-    padding:0;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     text-decoration: none;
 }
-.inicio{
+body{
+     background-color: #021427;
+}
+.inicio {
     width: 100%;
     height: 100vh;
-    background:url(./multimedia/video-inicio.gif) no-repeat;
+    background: url(./multimedia/video-inicio.gif) no-repeat;
     display: flex;
     flex-direction: column;
     background-size: cover;
 }
+
 @font-face {
-    font-family:"starwars";
-    src: url(./fuentes/SF\ Distant\ Galaxy\ Alternate.ttf)
+    font-family: "starwars";
+    src: url(./fuentes/Starjedi.ttf)
 }
-@font-face{
+
+@font-face {
     font-family: "adorable";
     src: url(./fuentes/Super\ Adorable.ttf);
 }
-.navegador{
-    display:flex;
-}
-.titulo1{
-    font-family: starwars;
-    font-size: 6rem;
-    width: 40%;
-    padding-top:1vh;
-    padding-left: 5vh;
-    color: black;
-    text-shadow: 5px 5px 0 yellow;
-}
-.navbar a{
-    font-size: 1.7rem;
-    color: white;
+
+.navegador {
+    display: flex;
 }
 
-.navbar{
+.titulo1 {
+    font-family: starwars;
+    font-size: 5rem;
+    width: 30%;
+    line-height: 10vh;
+    padding-top: 1vh;
+    padding-left: 5vh;
+    color: yellow
+}
+
+.navbar a {
+    font-size: 1.7rem;
+    color: white;
+    justify-content: center;
+}
+
+.navbar {
     display: flex;
     width: 70%;
     height: 30%;
     gap: 2vh;
     padding: 2vh;
-    margin-top: 5vh;
-    margin-left:8vh;
+    margin-top: 8vh;
     justify-content: space-around;
     align-items: center;
 }
-.personajes, .planetas,.series{
+
+.titulo-inicio {
+    color: #ffff00d1;
+    text-align: center;
+    font-size: 4rem;
+    margin-top: 30vh;
+}
+
+.texto-inicio {
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.personajes,
+.planetas{
     width: 100%;
     height: 100vh;
-    background: url(./multimedia/fondo-juegos.png);
     background-size: cover;
     display: flex;
     flex-direction: column;
 }
-.juegos{
+.series{
+     width: 100%;
+    height: 240vh;
+    
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+.juegos {
     width: 100%;
     height: 140vh;
-    background: url(./multimedia/fondo-juegos.png);
+    
     background-size: cover;
     display: flex;
     flex-direction: column;
-}
-.juegos .sub{
     margin-top: 20vh;
 }
-.sub{
-    text-align: end;
+
+.juegos .sub {
+    margin-top: 20vh;
+}
+
+.sub {
+    text-align: center;
     padding: 2vh;
-    font-family: "starwars";
     color: white;
-    text-shadow: 5px 5px 0 fuchsia;
     letter-spacing: 5px;
-    font-size:1.5rem ;
+    font-size: 4rem;
+    color: yellow;
 }
-.buscar{
-    margin-left: 69%;
+
+.buscar {
+    display: block;
+    margin: 0 auto;
     border-radius: 10px;
-    width: 30vw;
+    width: 50vw;
     padding: 1.5vh;
+    background-color: #02022d;
+    color: white;
 }
- .box-container{
+
+.box-container {
     display: flex;
     justify-content: space-around;
     color: white;
@@ -90,25 +129,30 @@
     align-items: center;
     height: 80vh;
 }
-.box{
+
+.box {
     border: 4px solid white;
 }
-.box img{
+
+.box img {
     padding: 2vh;
 }
 
-.planetas h2{
+.planetas h2 {
     color: black;
     text-shadow: -1px -1px 0 yellow;
-    font-size:2rem ;
+    font-size: 2rem;
     font-family: "starwars";
     padding-left: 5vh;
 }
-.contenido-p img,.contenido-n img{
+
+.contenido-p img,
+.contenido-n img {
     width: 25vw;
 }
 
-.contenido-p,.contenido-n{
+.contenido-p,
+.contenido-n {
     display: flex;
     justify-content: space-around;
     color: white;
@@ -118,29 +162,36 @@
     text-align: center;
     font-size: 1.3rem;
 }
-.carrusel-1,.carrusel-2{
+
+.carrusel-1,
+.carrusel-2 {
     display: flex;
     flex-direction: column;
 }
-.contenido-p p{
+
+.contenido-p p {
     font-size: 2rem;
     color: #13b5eb;
 }
-.contenido-n p{
+
+.contenido-n p {
     font-size: 2rem;
     color: yellow;
 }
+
 .estatico {
     display: flex;
     gap: 5vh;
 }
-.banner{
+
+.banner {
     width: 100%;
     height: 100vh;
     overflow: hidden;
     position: relative;
 }
-.banner .slider{
+
+.banner .slider {
     position: absolute;
     width: 200px;
     height: 300px;
@@ -151,27 +202,31 @@
     animation: autoRun 20s linear infinite;
     z-index: 2;
 }
-@keyframes autoRun{
-    from{
+
+@keyframes autoRun {
+    from {
         transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
-    }to{
+    }
+
+    to {
         transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
     }
 }
 
-.banner .slider .item{
+.banner .slider .item {
     position: absolute;
     inset: 0 0 0 0;
-    transform: 
-        rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 4deg))
-        translateZ(250px);
+    transform:
+        rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 4deg)) translateZ(250px);
 }
-.banner .slider .item img{
+
+.banner .slider .item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.transparent{
+
+.transparent {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -179,233 +234,436 @@
     align-items: center;
     overflow: hidden;
 }
-.carrusel-3{
-    width:60vw;
+
+.carrusel-3 {
     overflow: hidden;
+    width: 100%;
+    padding: 20px 0;
 }
-.carrusel{
+
+.carrusel {
     display: flex;
-    gap: 3vw;
-    animation: scroll 10s linear infinite;
-    margin-top: 70vh;
+    gap: 20vw;
+    width: max-content;
+    animation: deslizar 20s linear infinite;
 }
-.carrusel img{
+
+.carrusel img {
     width: 10vw;
     height: auto;
-    object-fit: cover;
+    transition: transform 0.3s;
 }
+
+.carrusel img:hover {
+    transform: scale(1.05);
+}
+
 @keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
 }
-.series p{
+
+.series p {
     color: #13b5eb;
     text-align: center;
     font-family: "adorable";
     font-size: 4rem;
 }
-.cuadro-1{
+
+.cuadro-1,.cuadro-2,.cuadro-3{
     display: flex;
-    justify-content:center;
-    gap:2vh;
-    position: relative;
-}
-.cuadro-1 img{
-    display: flex;
-    width: 10vw;
-}
-.ver{
-    position: absolute;
-    top: 50%;
-    left:50%;
-    transform: translate(-50%,-50%);
-    display: none;
-}
-.cuadro-1:hover .ver:hover{
-    display: block;
-}
-.cuadro-1:hover{
-    cursor: pointer;
-}
-.inferior{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "parte1 parte2";
-}
-.cuadro-2{
-    grid-area: parte1;
-    place-items: center;
-}
-.cuadro-3{
-    grid-area:  parte2;
-    place-items: center;
+    gap: 20vw;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
 }
 
-.more{
-    display: flex;
-    justify-content:space-around;
-    padding: 5vh;
+.tarjeta {
+  background-color: #0b0f1a;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  width: 200px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
-.more img{
+
+.tarjeta img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.tarjeta p {
+  color: white;
+  font-weight: bold;
+  margin: 0.5rem 0;
+  font-size: 1.5rem;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.tarjeta a.ver {
+  display: inline-block;
+  margin-bottom: 1rem;
+  background-color: #007BFF;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.tarjeta a.ver:hover {
+  background-color: #0056b3;
+}
+
+
+.more {
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+    padding: 5vh;
+    width: 50%;
+}
+.nosotras{
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+    z-index: 2;
+}
+.more img {
     width: 10vw;
 }
-.more img:hover{
+.nosotras img{
+    width: 15vw;
+}
+.more img:hover {
     transform: scale(1.2);
     transform: all 0.3s ease
 }
-.final{
+
+.final {
     font-family: starwars;
     font-size: 6rem;
-    padding-top:1vh;
+    padding-top: 1vh;
     padding-left: 5vh;
-    color: black;
-    text-shadow: 5px 5px 0 yellow;
+    color:yellow;
     text-align: center;
 }
 
 
-.informacion{
+.informacion {
     width: 100%;
-    height: 100vh;
-    background: url(./multimedia/fondo-f.webp)no-repeat;
+    height: 116.5vh;
+    
     background-size: cover;
     display: flex;
     flex-direction: column;
 }
+
 .espacial {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    height: 100vh;
+    height: 18vh;
 }
-.fas.fa-bars {
-  font-size: 30px;
-  color: white;
-  display: none;
-  cursor: pointer;
+
+.icono-menu {
+    display: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    z-index: 100;
 }
+
 #toggler {
-  display: none;
+    display: none;
 }
- .navbar {
-      display: flex;
-      gap: 0;
+
+.navbar {
+    display: flex;
+    gap: 0;
+}
+
+.deslizar {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+    border-radius: 15px;
+    margin-top: 30vh;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.slider {
+    display: flex;
+    height: 100%;
+    width: 400%;
+    position: relative;
+    transition: all 0.5s ease;
+    gap: 5vh;
+    width: 335vw;
+    margin-left: 5vh;
+    
+}
+
+.slide {
+    height: 100%;
+    flex-shrink: 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    ;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    
+}
+
+.titulo-carrusel {
+    position: absolute;
+    margin-top: 30vh;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+}
+.slider a{
+    color: #ffff00dc;
+    font-size: 1.5rem;
+}
+
+#slide1:checked ~ .slider {
+  transform: translateX(0%);
+}
+#slide2:checked ~ .slider {
+  transform: translateX(-10%);
+}
+#slide3:checked ~ .slider {
+  transform: translateX(-20%);
+}
+#slide4:checked ~ .slider {
+  transform: translateX(-30%);
+}
+
+.controles{
+    position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+.flecha {
+    position: absolute;
+    top: 50%;
+    font-size: 2rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    cursor: pointer;
+    z-index: 2;
+    border-radius: 50%;
+    user-select: none;
+    cursor: pointer;
+}
+
+.flecha:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.izquierda {
+    left: 10px;
+}
+
+.derecha {
+    right: 10px;
+}
+.controles .grupo {
+  display: none;
+  justify-content: space-between;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: auto;
+}
+
+#slide1:checked ~ .controles #g1,
+#slide2:checked ~ .controles #g2,
+#slide3:checked ~ .controles #g3,
+#slide4:checked ~ .controles #g4 {
+  display: flex;
+}
+.contenedor-peli{
+    display: flex;
+    flex-direction: column;
+}
+@media (max-width: 800px) {
+    .icono-menu {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
     }
 
-@media (max-width: 800px) {
-  .navbar {
-    display: none;
-    flex-direction: column;
-    background-color: black;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 20%;
-    height: 60vh;
-    z-index: 99;
-    border-radius: 10px;
-  }
+    .navbar {
+        display: none;
+        flex-direction: column;
+        background-color: black;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        width: 80%;
+        height: 50%;
+        z-index: 99;
+        padding: 1rem;
+        border-radius: 10px;
+    }
 
-  #toggler:checked ~ .navbar {
-    display: flex;
-  }
+    .titulo-inicio {
+        font-size: 2rem;
+        margin-top: 50vh;
+    }
 
-  .fas.fa-bars {
-    display: block;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-  }
-  .navbar a {
+    .texto-inicio {
+        font-size: 1.3rem;
+        width: 90%;
+    }
+
+    #toggler:checked~.navbar {
+        display: flex;
+    }
+
+    .fas.fa-bars {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    .navbar a {
         color: white;
         padding: 0;
         text-decoration: none;
         font-size: 1rem;
-      }
+    }
 
-    .titulo1{
+    .titulo1 {
         width: 100%;
         font-size: 3rem;
         text-align: center;
-        padding-top:5vh;
+        padding-top: 5vh;
         padding-left: 0vh;
-}
-.inicio{
-    width: 100%;
-    height:100vh;
-    background-position: center;
-}
- .box-container {
-    display: flex;
-    flex-direction: column;
-    gap: 2vh;
-    margin-top: 5vh;
-}
-.box-container img{
-    width: 75%;
-    border: 4px solid white;
-}
-.box{
-    border: 0;
-}
-.buscar{
-    margin-left:40%;
-    width: 55vw;
-    padding: 1.5vh;
-}
-.contenido-p,.contenido-n{
-    justify-content: space-around;
-    font-size: 0.8rem;
-    margin-top: 2vh;
-}
-.contenido-p p{
-    font-size: 1rem;
-}
-.contenido-n p{
-    font-size: 1rem;
-}
-.series p{
-    font-size: 2rem;
-}
-.cuadro-2 img, .cuadro-3 img{
-    width: 20vw;
-}
-.cuadro-3,.cuadro-2{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 2vh;
-}
-.cuadro-1 img{
-    width: 25vw;
-}
-.final{
-    font-size: 2.5rem;
-}
-.more img{
-    width: 15vw;
-}
-.more{
-    padding: 0;
-    margin-top: 5vh;
-}
-.informacion{
-    height: 70vh;
-}
-.planetas{
-    justify-content: center;
-}
-.planetas h2{
-    margin-top: 3vh;
-}
-.carrusel img{
-    width: 30vw;
-}
-.carrusel-3{
-    width:90vw;
-}
+    }
+
+    .inicio {
+        width: 100%;
+        height: 100vh;
+        background-position: center;
+    }
+
+    .box-container {
+        display: flex;
+        flex-direction: column;
+        gap: 2vh;
+        margin-top: 5vh;
+    }
+
+    .box-container img {
+        width: 75%;
+        border: 4px solid white;
+    }
+
+    .box {
+        border: 0;
+    }
+
+    .buscar {
+        margin-left: 40%;
+        width: 55vw;
+        padding: 1.5vh;
+    }
+
+    .contenido-p,
+    .contenido-n {
+        justify-content: space-around;
+        font-size: 0.8rem;
+        margin-top: 2vh;
+    }
+
+    .contenido-p p {
+        font-size: 1rem;
+    }
+
+    .contenido-n p {
+        font-size: 1rem;
+    }
+
+    .series p {
+        font-size: 2rem;
+    }
+
+    .cuadro-2 img,
+    .cuadro-3 img {
+        width: 20vw;
+    }
+
+    .cuadro-3,
+    .cuadro-2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2vh;
+    }
+
+    .cuadro-1 img {
+        width: 25vw;
+    }
+
+    .final {
+        font-size: 2.5rem;
+    }
+
+    .more img {
+        width: 15vw;
+    }
+
+    .more {
+        padding: 0;
+        margin-top: 5vh;
+    }
+
+    .informacion {
+        height: 70vh;
+    }
+
+    .planetas {
+        justify-content: center;
+    }
+
+    .planetas h2 {
+        margin-top: 3vh;
+    }
+
+    .carrusel img {
+        width: 30vw;
+    }
+
+    .carrusel-3 {
+        width: 90vw;
+    }
 }

@@ -7,7 +7,7 @@
     <title>STAR WARS</title>
     <link rel="stylesheet" href="./style.css">
     <script type="module" defer src="data.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
 
 </head>
 
@@ -16,22 +16,24 @@
         <header class="navegador">
 
             <input type="checkbox" name="" id="toggler">
-            <label for="toggler" class="fas fa-bars"></label>
+            <label for="toggler" class="ri-menu-line icono-menu"></label>
 
 
             <h1 class="titulo1">STAR WARS</h1>
 
             <nav class="navbar">
-                <a href="#personajes">Personajes</a>
-                <a href="#planetas">Planetas y Naves</a>
-                <a href="#juegos">Juegos</a>
-                <a href="#series">Series</a>
-                <a href="#informacion">Más Información </a>
+                <a href="#personajes"><i class="ri-star-line"></i>Personajes</a>
+                <a href="#planetas"><i class="ri-global-line"></i>Planetas y Naves</a>
+                <a href="#juegos"><i class="ri-gamepad-line"></i>Juegos</a>
+                <a href="#series"><i class="ri-tv-line"></i>Series</a>
+                <a href="#informacion"><i class="ri-file-warning-line"></i>Más Información </a>
             </nav>
 
         </header>
 
-
+        <h2 class="titulo-inicio">Más allá de las estrellas… comienza tu destino.</h2>
+        <p class="texto-inicio">Explora el universo de Star Wars, descubre planetas, especies, naves y mucho más en esta
+            experiencia interactiva.</p>
 
     </section>
 
@@ -43,7 +45,7 @@
                 <input type="text" placeholder="Buscar" class="buscar">
             </form>
         </div>
-            <lista-personaje />
+        <lista-personaje />
     </section>
 
 
@@ -118,69 +120,98 @@
             <h3 class="sub">Juegos</h3>
             <form action="">
                 <input type="text" placeholder="Buscar" class="buscar">
+            </form>
         </div>
 
 
-        <div class="banner">
-            <div class="slider" style="--quantity: 10">
-                <div class="item" style="--position: 1"><img src="./multimedia/PORTADA-JUEGO.png" alt=""></div>
-                <div class="item" style="--position: 2"><a
-                        href="https://www.ea.com/es-es/games/starwars/battlefront/star-wars-battlefront-2"
-                        target="_blank">
-                        <img src="./multimedia/juego-2.png" alt="juego2"></a></div>
-                <div class="item" style="--position: 3"><a
-                        href="https://store.steampowered.com/app/32370/STAR_WARS_Knights_of_the_Old_Republic/?l=spanish"
-                        target="_blank">
-                        <img src="./multimedia/juego-3.png" alt="juego3"></a></div>
-                <div class="item" style="--position: 4"><a href="https://www.ea.com/es-es/games/starwars/squadrons"
-                        target="_blank">
-                        <img src="./multimedia/juego-4.png" alt="juego4"></a></div>
-                <div class="item" style="--position: 5"><a
-                        href="https://store.steampowered.com/app/6020/STAR_WARS_Jedi_Knight__Jedi_Academy/?l=spanish"
-                        target="_blank">
-                        <img src="./multimedia/juego-1.png" alt="juego1"></a></div>
-
-            </div>
-
-
-            <section class="transparent">
-                <article class="carrusel-3">
-                    <div class="carrusel" id="carrusel">
-                        <a href="https://www.lego.com/es-es/themes/star-wars?consent-modal=show&age-gate=grown_up"
-                            target="_blank">
-                            <img src="./multimedia/juego-5.png" alt="juego5"></a>
-
-                        <a href="https://store.steampowered.com/app/32470/STAR_WARS_Empire_at_War__Gold_Pack/?l=spanish"
-                            target="_blank">
-                            <img src="./multimedia/juego-6.png" alt="juego6"></a>
-
-                        <a href="https://www.ubisoft.com/es-mx/game/star-wars/outlaws" target="_blank">
-                            <img src="./multimedia/juego-7.png" alt="juego7"></a>
-
-
-                        <a href="https://store.steampowered.com/app/2443630/STAR_WARS_Episode_I_Jedi_Power_Battles/?l=spanish"
-                            target="_blank">
-                            <img src="./multimedia/juego-8.png" alt="juego8"></a>
-
-
-
-                        <a href="https://www.lego.com/es-es/themes/star-wars?consent-modal=show&age-gate=grown_up"
-                            target="_blank">
-                            <img src="./multimedia/juego-5.png" alt="juego5"></a>
-
-                        <a href="https://store.steampowered.com/app/32470/STAR_WARS_Empire_at_War__Gold_Pack/?l=spanish"
-                            target="_blank">
-                            <img src="./multimedia/juego-6.png" alt="juego6"></a>
-
-                        <a href="https://www.ubisoft.com/es-mx/game/star-wars/outlaws" target="_blank">
-                            <img src="./multimedia/juego-7.png" alt="juego7"></a>
-
-                        <a href="https://store.steampowered.com/app/2443630/STAR_WARS_Episode_I_Jedi_Power_Battles/?l=spanish"
-                            target="_blank">
-                            <img src="./multimedia/juego-8.png" alt="juego8"></a>
+        <div class="deslizar">
+            <input type="radio" name="slider" id="slide1" checked>
+            <input type="radio" name="slider" id="slide2">
+            <input type="radio" name="slider" id="slide3">
+            <input type="radio" name="slider" id="slide4">
+            <div class="slider" id="slider">
+                <div class="slide">
+                    <img src="./multimedia/juego-2.png" alt="juego2">
+                    <div class="titulo-carrusel">
+                        <h2>Star Wars Battlefront II</h2>
+                        <a href="https://www.ea.com/es-es/games/starwars/battlefront/star-wars-battlefront-2"
+                            target="_blank">Jugar Ahora</a>
                     </div>
-                </article>
-            </section>
+                </div>
+                <div class="slide">
+                    <img src="./multimedia/juego-3.png" alt="juego3">
+                    <div class="titulo-carrusel">
+                        <h2>Knights of the Old Republic</h2>
+                        <a href="https://store.steampowered.com/app/32370/STAR_WARS_Knights_of_the_Old_Republic/?l=spanish"
+                            target="_blank">Jugar Ahora</a>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="./multimedia/juego-4.png" alt="juego4">
+                    <div class="titulo-carrusel">
+                        <h2>Star Wars Squadrons</h2>
+                        <a href="https://www.ea.com/es-es/games/starwars/squadrons" target="_blank">Jugar Ahora</a>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="./multimedia/juego-1.png" alt="juego1">
+                    <div class="titulo-carrusel">
+                        <h2>Star Wars Jedi Knight: Jedi Academy</h2>
+                        <a href="https://store.steampowered.com/app/6020/STAR_WARS_Jedi_Knight__Jedi_Academy/?l=spanish"
+                            target="_blank">Jugar Ahora</a>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="./multimedia/juego-5.png" alt="juego5">
+                    <div class="titulo-carrusel">
+                        <h2>Lego Star Wars</h2>
+                        <a href="https://www.lego.com/es-es/themes/star-wars?consent-modal=show&age-gate=grown_up"
+                    target="_blank">Jugar Ahora</a>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="./multimedia/juego-6.png" alt="juego5">
+                    <div class="titulo-carrusel">
+                        <h2>Star Wars: Empire at War</h2>
+                        <a href="https://store.steampowered.com/app/32470/STAR_WARS_Empire_at_War__Gold_Pack/?l=spanish"
+                    target="_blank">Jugar Ahora</a>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="./multimedia/juego-7.png" alt="juego5">
+                    <div class="titulo-carrusel">
+                        <h2>Star Wars outlaws</h2>
+                        <a href="https://www.ubisoft.com/es-mx/game/star-wars/outlaws" target="_blank">Jugar Ahora</a>
+                    </div>
+                </div> 
+                <div class="slide">
+                    <img src="./multimedia/juego-8.png" alt="juego5">
+                    <div class="titulo-carrusel">
+                        <h2>Star Wars Episode I: Jedi Power Battles</h2>
+                        <a href="https://store.steampowered.com/app/2443630/STAR_WARS_Episode_I_Jedi_Power_Battles/?l=spanish"
+                    target="_blank">Jugar Ahora</a>
+                    </div>
+                </div>
+            </div>
+<div class="controles">
+  <div class="grupo" id="g1">
+    <label for="slide4" class="flecha izquierda">&#10094;</label>
+    <label for="slide2" class="flecha derecha">&#10095;</label>
+  </div>
+  <div class="grupo" id="g2">
+    <label for="slide1" class="flecha izquierda">&#10094;</label>
+    <label for="slide3" class="flecha derecha">&#10095;</label>
+  </div>
+  <div class="grupo" id="g3">
+    <label for="slide2" class="flecha izquierda">&#10094;</label>
+    <label for="slide4" class="flecha derecha">&#10095;</label>
+  </div>
+  <div class="grupo" id="g4">
+    <label for="slide3" class="flecha izquierda">&#10094;</label>
+    <label for="slide1" class="flecha derecha">&#10095;</label>
+  </div>
+</div>
+    </section>
     </section>
 
 
@@ -189,49 +220,70 @@
         <div class="search">
             <h3 class="sub">series</h3>
             <form action="">
-                <input type="text" placeholder="Buscar" class="buscar">
+                <input type="text" placeholder="Buscar" class="buscar"></form>
         </div>
-
         <p>TRILOGIA ORIGINAL</p>
         <article class="cuadro-1">
+            <div class="tarjeta">
             <img src="./multimedia/serie-1.png" alt="serie">
+            <p>Una Nueva Esperanza</p>
             <a href="https://www.disneyplus.com/es-co/browse/entity-9a280e53-fcc0-4e17-a02c-b1f40913eb0b?distributionPartner=google"
                 class="ver">Ver</a>
+                </div>
+                <div class="tarjeta">
             <img src="./multimedia/serie-2.png" alt="serie">
+            <p>El Imperio Contraataca</p>
             <a href="https://www.disneyplus.com/es-co/browse/entity-0f5c5223-f4f6-46ef-ba8a-69cb0e17d8d3?distributionPartner=google"
                 class="ver">Ver</a>
+                </div>
+                <div class="tarjeta">
             <img src="./multimedia/serie-3.png" alt="serie">
+            <p>El Retorno del Jedi</p>
             <a href="https://www.disneyplus.com/es-co/browse/entity-4b6e7cda-daa5-4f2d-9b61-35bbe562c69c?distributionPartner=google"
                 class="ver">Ver</a>
+                </div>
         </article>
 
-
-        <div class="inferior">
-
+            <p>TRILOGIA PRELUDIO</p>
             <article class="cuadro-2">
-                <p>TRILOGIA PRELUDIO</p>
+                <div class="tarjeta">
                 <img src="./multimedia/serie-4.png" alt="serie">
+                <p>La amenaza fantasma</p>
                 <a href="https://www.disneyplus.com/es-co/browse/entity-e0a9fee4-2959-4077-ad8c-8fab4fd6e4d1?distributionPartner=google"
                     class="ver">Ver</a>
+                    </div>
+                    <div class="tarjeta">
                 <img src="./multimedia/serie-5.png" alt="serie">
+                <p>El ataque de los clones</p>
                 <a href="https://www.disneyplus.com/es-co/browse/entity-39cbdf17-1bbe-4de2-b4a4-8e342875c2c6?distributionPartner=google"
                     class="ver">Ver</a>
+                    </div>
+                    <div class="tarjeta">
                 <img src="./multimedia/serie-6.png" alt="serie">
+                <p>La venganza de los Sith</p>
                 <a href="https://www.disneyplus.com/es-co/browse/entity-eb1e2c5f-69bf-4240-a61f-7ffc4e0311b3?distributionPartner=google"
                     class="ver">Ver</a>
+                    </div>
             </article>
-
+            <p>TRILOGIA SECUELA</p>
             <article class="cuadro-3">
-                <p>TRILOGIA SECUELA</p>
+                <div class="tarjeta">
                 <img src="./multimedia/serie-7.png" alt="serie">
+                <p>El despertar de la fuerza</p>
                 <a href="https://www.disneyplus.com/es-co/browse/entity-43f9c275-e7e8-4ab3-802d-00d06a8ad841?distributionPartner=google"
-                    class="ver">Ver</a>
+                    class="ver">Ver</a></div>
+                    <div class="tarjeta">
                 <img src="./multimedia/serie-8.png" alt="serie">
+                <p>Los últimos Jedi</p>
                 <a href="https://www.disneyplus.com/es-co/browse/entity-2854a94d-3702-40bd-97a4-12d55a809188?distributionPartner=google"
                     class="ver">Ver</a>
+                    </div>
+                    <div class="tarjeta">
                 <img src="./multimedia/serie-9.png" alt="serie">
+                <p>El ascenso de Skywalker</p>
                 <a href="https://www.disneyplus.com/es-co/browse/entity-50c1aff5-3051-4839-9ebf-e332c635e216?distributionPartner=google"
                     class="ver">Ver</a>
+                    </div>
             </article>
         </div>
     </section>
@@ -258,14 +310,12 @@
             <a href="https://workspace.google.com/intl/es-419/gmail/" target="_blank">
                 <img src="./multimedia/correo.png" alt="correo"></a>
 
-
-            <img src="./multimedia/cami.png" alt="cami">
-
-            <img src="./multimedia/valen.png" alt="valen">
-
         </article>
+        <article class="nosotras">
+        <img src="./multimedia/cami.png" alt="cami">
 
-
+        <img src="./multimedia/valen.png" alt="valen">
+        </article>
         <div class="espacial">
             <img src="./multimedia/espacial.png" alt="espacial">
         </div>
