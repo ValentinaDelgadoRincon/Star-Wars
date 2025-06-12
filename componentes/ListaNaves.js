@@ -8,7 +8,7 @@ class ListaNaves extends HTMLElement{
     }
     async cargarNaves(){
         try{
-            const respuesta=await fetch('https://swapi.dev/api/vehicles/');
+            const respuesta=await fetch('https://swapi.py4e.com/api/vehicles/');
             const datos = await respuesta.json();
             this.render(datos.results);
         }catch (error){
