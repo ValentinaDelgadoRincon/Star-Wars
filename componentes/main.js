@@ -66,3 +66,5 @@ class barraBuscador extends HTMLElement {
     }
 }
 customElements.define("barra-buscador", barraBuscador);
+
+

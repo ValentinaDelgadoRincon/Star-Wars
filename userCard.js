@@ -35,11 +35,6 @@ class UserCard extends HTMLElement {
         userList.appendChild(card);
       });
     }
-
-    
-    
-    
-    
     
     
     document.querySelector("search-bar").addEventListener("busqueda", (evento) => {
