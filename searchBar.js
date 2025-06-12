@@ -23,7 +23,6 @@ class SearchBar extends HTMLElement {
     connectedCallback() {
       const input = this.shadowRoot.querySelector("input");
       input.addEventListener("input", () => {    
-        console.log('Estoy mandando', input.value.toLowerCase());
             
         const eventoContenidoSearchBar = new CustomEvent("busqueda", {
           detail: input.value.toLowerCase(),

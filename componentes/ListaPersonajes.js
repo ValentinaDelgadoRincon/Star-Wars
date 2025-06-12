@@ -2,71 +2,133 @@ class ListaPersonajes extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
+        this.personajes = [];
     }
 
-    set personajes(data) {
+    connectedCallback() {
+        this.cargarPersonajes();
+
+
+        this.addEventListener("busqueda", (eventoMensaje) => {
+            console.log(eventoMensaje.detail);
+            
+            const filtro = eventoMensaje.detail;
+            this.filtrar(filtro);
+        });
+    }
+
+    async cargarPersonajes() {
+        try {
+            const respuesta = await fetch('https://swapi.py4e.com/api/people/');
+            const datos = await respuesta.json();
+            this.personajes = datos.results; 
+            this.render(this.personajes);
+            this.renderTarjetas(this.personajes);
+        } catch (error) {
+            this.renderError();
+            console.error('Error cargando personajes', error);
+        }
+    }
+
+    filtrar(filtro) {
+        const filtrados = this.personajes.filter(personaje =>
+            personaje.name.toLowerCase().includes(filtro)
+        );
+        this.renderTarjetas(filtrados);
+    }
+    
+    
+
+    renderError() {
+        this.shadowRoot.innerHTML = `<p style="color:red;">Error al cargar los personajes</p>`;
+    }
+
+    render(personajes) {
         this.shadowRoot.innerHTML = `
-        <div>        
-            <h3>${data.name}</h3>
-            <p><strong>Altura:</strong>${data.height} cm</p>
-            <p><strong>Genero:</strong>${data.gender} </p>
-        </div>
         <style>
-            div {
-                border: 1px solid #ccc;
-                padding: 10px;
-                margin: 10px;
-                border-radius: 5px;
-                background-color: #f9f9f9;
-            }
-            h3 {
-                color: #333;
-            }
-            p {
-                margin: 5px 0;
-            }
-            strong {
-                color: #555;
-            }
-        </style>
-     
-    `;
+    .contenedor{
+    display:flex;
+    gap:2vh;
+    padding:5vh;
+    width:100%;
+    box-sizing:border-box;
+    }
+    .espacio-tarjeta{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+    padding:0;
+    padding:5vh;
+    width:50%;
+    }
+    .tarjetas{
+    text-align:center;
+    background-color: #3e565994;
+    border:1px solid #ccc;
+    color:yellow;
+    line-height: 1rem;
+    }
+    border-radius:8px;
+    padding:16px;
+    box-shadow:2px 2px 6px black;
+    font-family:Arial;
+    }
+    .tarjetas h3{
+    font-size:20px
+    color:yellow;
+    }
+    .tarjetas p{
+    margin: 4px 0;
+    font-size:14px;
+    color: white;
+    }
+    .video{
+        flex:1;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+    .video video {
+        width: 100%;
+        max-width: 400px;
+        border: 2px solid white;
+        border-radius: 8px;
+    }
+    </style>
+        <div class="contenedor">
+            <div class="espacio-tarjeta" id="user-container"></div>
+            <div class="video">
+                <video src="multimedia/video-off.mp4" autoplay loop></video>
+            </div>
+        </div>
+        `;
         const container = this.shadowRoot.querySelector('#user-container');
-        users.forEach(user => {
+        personajes.forEach(personaje => {
             const tarjetas = document.createElement('div');
             tarjetas.classList.add('tarjetas');
             tarjetas.innerHTML = `
-        
-        `;
+                <h3>${personaje.name}</h3>
+                <p><strong>Altura:</strong> ${personaje.height} cm</p>
+                <p><strong>Género:</strong> ${personaje.gender}</p>
+            `;
             container.appendChild(tarjetas);
         });
     }
 
-}
-
-customElements.define('lista-personaje', ListaPersonajes);
-
-
-
-
-connectedCallback() {
-    this.cargarUsuarios()
-}
-
-
-async cargarUsuarios() {
-    try {
-        const respuesta = await fetch('https://swapi.py4e.com/api/people/');
-        const datos = await respuesta.json();
-
-        this.render(datos.results);
-    } catch (error) {
-        this.renderError();
-        console.error('Error cargando personajes', error);
+    renderTarjetas(personajes) {
+        const container = this.shadowRoot.querySelector('#user-container');
+        container.innerHTML = '';
+        personajes.forEach(personaje => {
+            const tarjeta = document.createElement('div');
+            tarjeta.classList.add('tarjetas');
+            tarjeta.innerHTML = `
+                <h3>${personaje.name}</h3>
+                <p><strong>Altura:</strong> ${personaje.height} cm</p>
+                <p><strong>Género:</strong> ${personaje.gender}</p>
+            `;
+            container.appendChild(tarjeta);
+        });
     }
+    
 }
-
-renderError() {
-    this.shadowRoot.innerHTML = `<p style="color:red;">Error al cargar los personajes</p>`;
-}
-
+customElements.define('lista-personaje', ListaPersonajes);

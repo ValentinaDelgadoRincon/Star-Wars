@@ -56,6 +56,8 @@ class barraBuscador extends HTMLElement {
     connectedCallback(){
         const input = this.shadowRoot.querySelector("input");
         input.addEventListener ("input", () => {
+            console.log(input.value);
+            
             const eventoContenido = new CustomEvent("busqueda", {
                 detail:input.value.toLowerCase(),
                 bubbles: true,
