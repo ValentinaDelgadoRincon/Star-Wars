@@ -8,11 +8,11 @@ class ListaPlanetas extends HTMLElement {
         ]
     }
     connectedCallback() {
-        this.cargarPlanetas()
+        this.cargarPlanetas();
 
-        this.addEventListener("busqueda", (eventomensaje) => {
-            console.log(eventomensaje.detail);
-            const filtro = eventomensaje.detail;
+        this.addEventListener("busqueda", (eventoMensaje) => {
+            console.log(eventoMensaje.detail);
+            const filtro = eventoMensaje.detail;
             this.filtrar(filtro);
         });
     }
@@ -53,7 +53,7 @@ render(planetas){
     }
         .planeta-espa-tarjeta{
         display:grid;
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:1fr 1fr 1fr 1fr 1fr;
         gap:16px;
         padding:0;
         padding:5vh;
@@ -83,11 +83,7 @@ render(planetas){
     .planeta-tarjeta img{
     width:100%
     }
-    .imagen-planeta{
-    width:2%;
-    height:2vh;
-
-    }
+   
     
         </style>
         <div class="contenedor">
@@ -110,9 +106,8 @@ render(planetas){
         <p>${planeta.gravity}</p>
         <p>${planeta.terrain}</p>
         `;
-        container.appendChild(tarjetas);
-
         contador = contador + 1;
+        container.appendChild(tarjetas);
 
     })
 }
@@ -126,12 +121,12 @@ renderTarjetas(planetas){
         tarjeta.innerHTML=`
         <img src="${this.imagenes[contador]}" alt="${planeta.name}">
         <h3>${planeta.name}</h3>
-        <p>${planeta.climate}</p>
-        <p>${planeta.gravity}</p>
-        <p>${planeta.terrain}</p>
+        <p><strong>Clima:</strong> ${planeta.climate}</p>
+        <p><strong>Gravedad:</strong> ${planeta.gravity}</p>
+        <p><strong>Terreno:</strong> ${planeta.terrain}</p>
         `;
-        container.appendChild(tarjeta);
         contador = contador + 1;
+        container.appendChild(tarjeta);
     });
 
 }
