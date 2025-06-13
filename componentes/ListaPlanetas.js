@@ -130,5 +130,5 @@ renderTarjetas(planetas){
     });
 
 }
-}
+};
 customElements.define('lista-planetas', ListaPlanetas);
