@@ -2,9 +2,16 @@ class ListaNaves extends HTMLElement{
     constructor(){
         super();
         this.attachShadow({mode:'open'});
+        this.naves = [];
+        this.imagenes = ["..multimedia/sandcrawler.jpeg", "../multimedia/T-16_skyhopper.webp", "../multimedia/X-34 landspeeder.jpeg", "../multimedia/TIELN-starfighter.jpeg", "../multimedia/snowspeeder.jpeg", "../multimedia/tie-bomber.jpeg", "../multimedia/AT-AT.jpeg", "../multimedia/AT-ST.jpeg", "../multimedia/cloud-car.jpeg", "../multimedia/the-khetanna.jpeg"];
     }
     connectedCallback(){
         this.cargarNaves()
+        this.addEventListener("busqueda", (eventoMensaje) => {
+            console.log(eventoMensaje.detail);
+            const filtro = eventoMensaje.detail;
+            this.filtrar(filtro);
+        });
     }
     async cargarNaves(){
         try{
@@ -62,7 +69,6 @@ class ListaNaves extends HTMLElement{
         <div class="contenedor">
             <div class="nave-espa-tarjeta" id="naves-container"></div>
             <div class="imagen-nave">
-                <img src="multimedia/serie-6.png"/>
             </div>
         </div>
     `
