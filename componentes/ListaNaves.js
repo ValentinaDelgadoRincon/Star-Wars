@@ -3,7 +3,7 @@ class ListaNaves extends HTMLElement{
         super();
         this.attachShadow({mode:'open'});
         this.naves = [];
-        this.imagenes = ["../multimedia/sandcrawler.jpeg", "../multimedia/T-16_skyhopper.webp", "../multimedia/X-34 landspeeder.jpeg", "../multimedia/TIELN-starfighter.jpeg", "../multimedia/snowspeeder.jpeg", "../multimedia/tie-bomber.jpeg", "../multimedia/AT-AT.jpeg", "../multimedia/AT-ST.jpeg", "../multimedia/cloud-car.jpeg", "../multimedia/the-khetanna.jpeg"];
+        this.imagenes = ["multimedia/sandcrawler.jpeg", "multimedia/T-16_skyhopper.webp", "multimedia/X-34 landspeeder.jpeg", "multimedia/TIELN-starfighter.jpeg", "multimedia/snowspeeder.jpeg", "multimedia/tie-bomber.jpeg", "multimedia/AT-AT.jpeg", "multimedia/AT-ST.jpeg", "multimedia/cloud-car.jpeg", "multimedia/the-khetanna.jpeg"];
     }
     connectedCallback(){
         this.cargarNaves();
@@ -124,4 +124,5 @@ class ListaNaves extends HTMLElement{
         });
     }
 };
+
 customElements.define('lista-naves', ListaNaves);

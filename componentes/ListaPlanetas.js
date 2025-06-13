@@ -132,6 +132,6 @@ renderTarjetas(planetas){
 };
 function imagen(){
     const imagenes=document.getElementById("img-planeta");
-    imagen.addEventListener("mouseover",imagen);
+    imagen.addEventListener("mouseover",imagenes);
 }
 customElements.define('lista-planetas', ListaPlanetas);

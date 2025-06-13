@@ -10,6 +10,7 @@
     <script type="module" defer src="componentes/ListaPersonajes.js"></script>
     <script type="module" defer src="componentes/ListaPlanetas.js"></script>
     <script type="module" defer src="componentes/ListaNaves.js"></script>
+    <script type="module" defer src="componentes/ListaSeries.js"></script>
     <script src="main.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
 
@@ -181,77 +182,14 @@
 
 
     <section class="series seccion" id="series">
-
         <div class="search">
-            <h3 class="sub">series</h3>
-            <barra-buscador />
-           
+          <h3 class="sub">Series</h3>
+          <barra-buscador></barra-buscador>
         </div>
-        <p>TRILOGIA ORIGINAL</p>
-        <article class="cuadro-1">
-            <div class="tarjeta">
-            <img src="./multimedia/serie-1.png" alt="serie">
-            <p>Una Nueva Esperanza</p>
-            <a href="https://www.disneyplus.com/es-co/browse/entity-9a280e53-fcc0-4e17-a02c-b1f40913eb0b?distributionPartner=google"
-                class="ver" target="_blank">Ver</a>
-                </div>
-                <div class="tarjeta">
-            <img src="./multimedia/serie-2.png" alt="serie">
-            <p>El Imperio Contraataca</p>
-            <a href="https://www.disneyplus.com/es-co/browse/entity-0f5c5223-f4f6-46ef-ba8a-69cb0e17d8d3?distributionPartner=google"
-                class="ver" target="_blank">Ver</a>
-                </div>
-                <div class="tarjeta">
-            <img src="./multimedia/serie-3.png" alt="serie">
-            <p>El Retorno del Jedi</p>
-            <a href="https://www.disneyplus.com/es-co/browse/entity-4b6e7cda-daa5-4f2d-9b61-35bbe562c69c?distributionPartner=google"
-                class="ver" target="_blank">Ver</a>
-                </div>
-        </article>
-
-            <p>TRILOGIA PRELUDIO</p>
-            <article class="cuadro-2">
-                <div class="tarjeta">
-                <img src="./multimedia/serie-4.png" alt="serie">
-                <p>La amenaza fantasma</p>
-                <a href="https://www.disneyplus.com/es-co/browse/entity-e0a9fee4-2959-4077-ad8c-8fab4fd6e4d1?distributionPartner=google"
-                    class="ver" target="_blank">Ver</a>
-                    </div>
-                    <div class="tarjeta">
-                <img src="./multimedia/serie-5.png" alt="serie">
-                <p>El ataque de los clones</p>
-                <a href="https://www.disneyplus.com/es-co/browse/entity-39cbdf17-1bbe-4de2-b4a4-8e342875c2c6?distributionPartner=google"
-                    class="ver" target="_blank">Ver</a>
-                    </div>
-                    <div class="tarjeta">
-                <img src="./multimedia/serie-6.png" alt="serie">
-                <p>La venganza de los Sith</p>
-                <a href="https://www.disneyplus.com/es-co/browse/entity-eb1e2c5f-69bf-4240-a61f-7ffc4e0311b3?distributionPartner=google"
-                    class="ver" target="_blank">Ver</a>
-                    </div>
-            </article>
-            <p>TRILOGIA SECUELA</p>
-            <article class="cuadro-3">
-                <div class="tarjeta">
-                <img src="./multimedia/serie-7.png" alt="serie">
-                <p>El despertar de la fuerza</p>
-                <a href="https://www.disneyplus.com/es-co/browse/entity-43f9c275-e7e8-4ab3-802d-00d06a8ad841?distributionPartner=google"
-                    class="ver" target="_blank">Ver</a></div>
-                    <div class="tarjeta">
-                <img src="./multimedia/serie-8.png" alt="serie">
-                <p>Los últimos Jedi</p>
-                <a href="https://www.disneyplus.com/es-co/browse/entity-2854a94d-3702-40bd-97a4-12d55a809188?distributionPartner=google"
-                    class="ver" target="_blank">Ver</a>
-                    </div>
-                    <div class="tarjeta">
-                <img src="./multimedia/serie-9.png" alt="serie">
-                <p>El ascenso de Skywalker</p>
-                <a href="https://www.disneyplus.com/es-co/browse/entity-50c1aff5-3051-4839-9ebf-e332c635e216?distributionPartner=google"
-                    class="ver" target="_blank">Ver</a>
-                    </div>
-            </article>
-        </div>
-    </section>
+      
+        <!-- Componente de series renderizado dinámicamente -->
+        <lista-series></lista-series>
+      </section>
 
 
 
