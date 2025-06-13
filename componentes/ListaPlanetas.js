@@ -1,27 +1,48 @@
 
-class ListaPlanetas extends HTMLElement{ 
-    constructor(){
+class ListaPlanetas extends HTMLElement {
+    constructor() {
         super();
-        this.attachShadow({mode:'open'});
-    } 
-    connectedCallback(){
-        this.cargarPlanetas()
+        this.attachShadow({ mode: 'open' });
+        this.planetas = [];
+        this.imagenes = ["../multimedia/tatooine.jpeg","../multimedia/alderaan.jpeg","../multimedia/yavin-4.jpeg","../multimedia/Hoth.jpeg","../multimedia/Dagobah.jpeg","../multimedia/Bespin.jpeg","../multimedia/Endor.jpeg","../multimedia/Naboo.jpeg","../multimedia/Coruscant.jpeg","../multimedia/Kamino.jpeg"
+        ]
     }
-    async cargarPlanetas(){
-        try{
-            const respuesta=await fetch('https://swapi.py4e.com/api/planets/');
+    connectedCallback() {
+        this.cargarPlanetas()
+
+        this.addEventListener("busqueda", (eventomensaje) => {
+            console.log(eventomensaje.detail);
+            const filtro = eventomensaje.detail;
+            this.filtrar(filtro);
+        });
+    }
+    async cargarPlanetas() {
+        try {
+            const respuesta = await fetch('https://swapi.py4e.com/api/planets/');
             const datos = await respuesta.json();
-            this.render(datos.results); 
-        }catch (error){
+            this.planetas = datos.results;
+            this.render(this.planetas);
+            this.renderTarjetas(this.planetas);
+        } catch (error) {
             this.renderError();
             console.error('Error cargando planetas', error);
         }
-        }
-        renderError() {
-        this.shadowRoot.innerHTML = `<p style="color:red;">Error al cargar los planetas</p>`;
     }
-    render(planetas){
-        this.shadowRoot.innerHTML=`
+    filtrar(filtro) {
+        const filtrados = this.planetas.filter(planeta =>
+            planeta.name.toLowerCase().includes(filtro)
+        );
+        this.renderTarjetas(filtrados)
+    }
+    renderError() {
+        this.shadowRoot.innerHTML = `<p style="color:red;">Error al cargar los personajes</p>`;
+    }
+
+
+
+render(planetas){
+    
+    this.shadowRoot.innerHTML = `
         <style>
          .contenedor{
         display:flex;
@@ -36,7 +57,8 @@ class ListaPlanetas extends HTMLElement{
         gap:16px;
         padding:0;
         padding:5vh;
-        width:50%;
+        width:100%;
+        justify-content: space-around;
         }
         .planeta-tarjeta{
             text-align:center;
@@ -44,42 +66,74 @@ class ListaPlanetas extends HTMLElement{
             border:1px solid #ccc;
             color:yellow;
             line-height: 1rem;
+            border-radius:8px;
+            padding:16px;
+            box-shadow:2px 2px 6px black;
+            font-family:Arial;
         }
-        border-radius:8px;
-        padding:16px;
-        box-shadow:2px 2px 6px black;
-        font-family:Arial;
         .tarjetas h3{
-        font-size:20px
-        color:yellow;
-    }
+            font-size:20px;
+            color:yellow;
+        }
     .planeta-tarjeta p{
     margin: 4px 0;
     font-size:14px;
     color: white;
-    .imagen-planeta
     }
+    .planeta-tarjeta img{
+    width:100%
     }
+    .imagen-planeta{
+    width:2%;
+    height:2vh;
+
+    }
+    
         </style>
         <div class="contenedor">
             <div class="planeta-espa-tarjeta" id="planets-container"></div>
             <div class="imagen-planeta">
-                <img src="multimedia/serie-5.png>
             </div>
         </div>
     `
-    const container=this.shadowRoot.querySelector('#planets-container')
+    const container = this.shadowRoot.querySelector('#planets-container')
+    let contador = 0;
     planetas.forEach(planeta => {
+        console.log(contador);
+
         const tarjetas = document.createElement('div');
         tarjetas.classList.add('planeta-tarjeta');
-        tarjetas.innerHTML=`
+        tarjetas.innerHTML = `
+        <img src="${this.imagenes[contador]}" alt="${planeta.name}">
         <h3>${planeta.name}</h3>
         <p>${planeta.climate}</p>
         <p>${planeta.gravity}</p>
         <p>${planeta.terrain}</p>
         `;
         container.appendChild(tarjetas);
+
+        contador = contador + 1;
+
     })
-    }
-};
+}
+renderTarjetas(planetas){
+    let contador = 0;
+    const container=this.shadowRoot.querySelector("#planets-container");
+    container.innerHTML='';
+    planetas.forEach(planeta=>{
+        const tarjeta=document.createElement('div');
+        tarjeta.classList.add('planeta-tarjeta');
+        tarjeta.innerHTML=`
+        <img src="${this.imagenes[contador]}" alt="${planeta.name}">
+        <h3>${planeta.name}</h3>
+        <p>${planeta.climate}</p>
+        <p>${planeta.gravity}</p>
+        <p>${planeta.terrain}</p>
+        `;
+        container.appendChild(tarjeta);
+        contador = contador + 1;
+    });
+
+}
+}
 customElements.define('lista-planetas', ListaPlanetas);
