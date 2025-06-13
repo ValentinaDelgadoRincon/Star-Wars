@@ -4,7 +4,7 @@ class ListaPlanetas extends HTMLElement {
         super();
         this.attachShadow({ mode: 'open' });
         this.planetas = [];
-        this.imagenes = ["../../multimedia/tatooine.jpeg","multimedia/alderaan.jpeg","../multimedia/yavin-4.jpeg","../multimedia/Hoth.jpeg","../multimedia/Dagobah.jpeg","../multimedia/Bespin.jpeg","../multimedia/Endor.jpeg","../multimedia/Naboo.jpeg","../multimedia/Coruscant.jpeg","../multimedia/kamino.jpeg"
+        this.imagenes = ["multimedia/tatooine.jpeg","multimedia/alderaan.jpeg","multimedia/yavin-4.jpeg","multimedia/Hoth.jpeg","multimedia/Dagobah.jpeg","multimedia/Bespin.jpeg","multimedia/Endor.jpeg","multimedia/Naboo.jpeg","multimedia/Coruscant.jpeg","multimedia/kamino.jpeg"
         ];
     }
     connectedCallback() {
@@ -88,7 +88,7 @@ render(planetas){
         </style>
         <div class="contenedor">
             <div class="planeta-espa-tarjeta" id="planets-container"></div>
-            <div class="imagen-planeta">
+            <div class="imagen-planeta" id="img-planeta">
             </div>
         </div>
     `
@@ -130,4 +130,8 @@ renderTarjetas(planetas){
 
 }
 };
+function imagen(){
+    const imagenes=document.getElementById("img-planeta");
+    imagen.addEventListener("mouseover",imagen);
+}
 customElements.define('lista-planetas', ListaPlanetas);
