@@ -4,7 +4,7 @@ class ListaPlanetas extends HTMLElement {
         super();
         this.attachShadow({ mode: 'open' });
         this.planetas = [];
-        this.imagenes = ["../multimedia/tatooine.jpeg","../multimedia/alderaan.jpeg","../multimedia/yavin-4.jpeg","../multimedia/Hoth.jpeg","../multimedia/Dagobah.jpeg","../multimedia/Bespin.jpeg","../multimedia/Endor.jpeg","../multimedia/Naboo.jpeg","../multimedia/Coruscant.jpeg","../multimedia/kamino.jpeg"
+        this.imagenes = ["../../multimedia/tatooine.jpeg","multimedia/alderaan.jpeg","../multimedia/yavin-4.jpeg","../multimedia/Hoth.jpeg","../multimedia/Dagobah.jpeg","../multimedia/Bespin.jpeg","../multimedia/Endor.jpeg","../multimedia/Naboo.jpeg","../multimedia/Coruscant.jpeg","../multimedia/kamino.jpeg"
         ];
     }
     connectedCallback() {
