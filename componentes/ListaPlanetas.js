@@ -95,7 +95,6 @@ render(planetas){
     const container = this.shadowRoot.querySelector('#planets-container')
     let contador = 0;
     planetas.forEach(planeta => {
-        console.log(contador);
 
         const tarjetas = document.createElement('div');
         tarjetas.classList.add('planeta-tarjeta');
