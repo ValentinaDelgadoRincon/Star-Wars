@@ -16,7 +16,7 @@ class ListaSeries extends HTMLElement {
 
     async cargarSeries() {
         try {
-            const response = await fetch('../data/trilogias.json');
+            const response = await fetch('data/trilogias.json');
             const data = await response.json();
 
 
