@@ -25,7 +25,6 @@ class ListaPlanetas extends HTMLElement {
             this.renderTarjetas(this.planetas);
         } catch (error) {
             this.renderError();
-            console.error('Error cargando planetas', error);
         }
     }
     filtrar(filtro) {
@@ -88,7 +87,7 @@ class ListaPlanetas extends HTMLElement {
         </style>
         <div class="contenedor">
             <div class="planeta-espa-tarjeta" id="planets-container"></div>
-            <div class="imagen-planeta" id="img-planeta">
+            <div class="imagen-planeta">
             </div>
         </div>
     `
@@ -137,7 +136,7 @@ class ListaPlanetas extends HTMLElement {
 
     }
 };
-// customElements.define('lista-planetas', ListaPlanetas);
+customElements.define('lista-planetas', ListaPlanetas);
 // document.addEventListener("DOMContentLoaded", () => {
 //     const imgs = document.querySelectorAll(".letra");
 //     if (!imgs.length) return;
