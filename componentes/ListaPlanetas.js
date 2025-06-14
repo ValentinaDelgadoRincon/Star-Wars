@@ -4,7 +4,7 @@ class ListaPlanetas extends HTMLElement {
         super();
         this.attachShadow({ mode: 'open' });
         this.planetas = [];
-        this.imagenes = ["multimedia/tatooine.jpeg","multimedia/alderaan.jpeg","multimedia/yavin-4.jpeg","multimedia/Hoth.jpeg","multimedia/Dagobah.jpeg","multimedia/Bespin.jpeg","multimedia/Endor.jpeg","multimedia/Naboo.jpeg","multimedia/Coruscant.jpeg","multimedia/kamino.jpeg"
+        this.imagenes = ["multimedia/tatooine.jpeg", "multimedia/alderaan.jpeg", "multimedia/yavin-4.jpeg", "multimedia/Hoth.jpeg", "multimedia/Dagobah.jpeg", "multimedia/Bespin.jpeg", "multimedia/Endor.jpeg", "multimedia/Naboo.jpeg", "multimedia/Coruscant.jpeg", "multimedia/kamino.jpeg"
         ];
     }
     connectedCallback() {
@@ -40,9 +40,9 @@ class ListaPlanetas extends HTMLElement {
 
 
 
-render(planetas){
-    
-    this.shadowRoot.innerHTML = `
+    render(planetas) {
+
+        this.shadowRoot.innerHTML = `
         <style>
          .contenedor{
         display:flex;
@@ -92,46 +92,62 @@ render(planetas){
             </div>
         </div>
     `
-    const container = this.shadowRoot.querySelector('#planets-container')
-    let contador = 0;
-    planetas.forEach(planeta => {
+        const container = this.shadowRoot.querySelector('#planets-container')
+        let contador = 0;
+        planetas.forEach(planeta => {
 
-        const tarjetas = document.createElement('div');
-        tarjetas.classList.add('planeta-tarjeta');
-        tarjetas.innerHTML = `
+            const tarjetas = document.createElement('div');
+            tarjetas.classList.add('planeta-tarjeta');
+            tarjetas.innerHTML = `
         <img src="${this.imagenes[contador]}" alt="${planeta.name}">
         <h3>${planeta.name}</h3>
         <p>${planeta.climate}</p>
         <p>${planeta.gravity}</p>
         <p>${planeta.terrain}</p>
         `;
-        contador = contador + 1;
-        container.appendChild(tarjetas);
+            contador = contador + 1;
+            container.appendChild(tarjetas);
 
-    })
-}
-renderTarjetas(planetas){
-    let contador = 0;
-    const container=this.shadowRoot.querySelector("#planets-container");
-    container.innerHTML='';
-    planetas.forEach(planeta=>{
-        const tarjeta=document.createElement('div');
-        tarjeta.classList.add('planeta-tarjeta');
-        tarjeta.innerHTML=`
+        })
+    }
+    renderTarjetas(planetas) {
+        let contador = 0;
+        const container = this.shadowRoot.querySelector("#planets-container");
+        container.innerHTML = '';
+        planetas.forEach(planeta => {
+            const tarjeta = document.createElement('div');
+            tarjeta.classList.add('planeta-tarjeta');
+            tarjeta.innerHTML = `
         <img src="${this.imagenes[contador]}" alt="${planeta.name}">
         <h3>${planeta.name}</h3>
         <p><strong>Clima:</strong> ${planeta.climate}</p>
         <p><strong>Gravedad:</strong> ${planeta.gravity}</p>
         <p><strong>Terreno:</strong> ${planeta.terrain}</p>
         `;
-        contador = contador + 1;
-        container.appendChild(tarjeta);
-    });
+            tarjeta.addEventListener("mouseover", () => {
+                tarjeta.style.transform = "scale(1.05)";
+                tarjeta.style.transition = "transform 0.3s ease";
+            });
+            tarjeta.addEventListener("mouseout", () => {
+                tarjeta.style.transform = "scale(1)";
+            })
+            contador = contador + 1;
+            container.appendChild(tarjeta);
+        });
 
-}
+    }
 };
-function imagen(){
-    const imagenes=document.getElementById("img-planeta");
-    imagen.addEventListener("mouseover",imagenes);
-}
-customElements.define('lista-planetas', ListaPlanetas);
+// customElements.define('lista-planetas', ListaPlanetas);
+// document.addEventListener("DOMContentLoaded", () => {
+//     const imgs = document.querySelectorAll(".letra");
+//     if (!imgs.length) return;
+//     imgs.forEach(img => {
+//         img.style.opacity = "0";
+//         img.style.transform = "translateY(-100px)";
+//         img.style.transition = "opacity 2s ease, transform 2s ease";
+//         requestAnimationFrame(() => {
+//             img.style.opacity = "1";
+//             img.style.transform = "translateY(0)";
+//         });
+//     });
+// });

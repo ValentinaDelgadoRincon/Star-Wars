@@ -127,6 +127,13 @@ class ListaPersonajes extends HTMLElement {
                 <p><strong>Género:</strong> ${personaje.gender}</p>
             `;
             container.appendChild(tarjeta);
+            tarjeta.addEventListener("mouseover",()=>{
+                tarjeta.style.transform=("scale(1.05)");
+                tarjeta.style.transition=("transform 0.3s ease")
+            });
+            tarjeta.addEventListener("mouseout",()=>{
+                tarjeta.style.transform=("scale(1)");
+            })
         });
     }
     

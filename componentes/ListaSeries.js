@@ -46,7 +46,6 @@ class ListaSeries extends HTMLElement {
         this.shadowRoot.innerHTML = `
         <style>
           .trilogia-title {
-            font-weight: bold;
             font-size: 1.5rem;
             margin-top: 20px;
             text-align: center;
@@ -62,8 +61,8 @@ class ListaSeries extends HTMLElement {
           .tarjeta {
             width: 200px;
             background-color: #3e565994;
-            border: 1px solid #ccc;
-            color: #fff;
+            border: 1px solid white;
+            color: white;
             border-radius: 8px;
             padding: 16px;
             box-shadow: 2px 2px 6px black;
@@ -87,7 +86,7 @@ class ListaSeries extends HTMLElement {
             color: black;
             border-radius: 4px;
             text-decoration: none;
-            font-weight: bold;
+            
           }
         </style>
         <div class="cuadro" id="series-container"></div>
@@ -105,6 +104,13 @@ class ListaSeries extends HTMLElement {
           <p class="trilogia-title">${serie.trilogia}</p>
           <a class="ver" href="${serie.link}" target="_blank">Ver</a>
         `;
+        tarjeta.addEventListener("mouseover",()=>{
+          tarjeta.style.transform="scale(1.05)";
+          tarjeta.style.transition="transform 0.3s ease"
+        })
+        tarjeta.addEventListener("mouseout",()=>{
+          tarjeta.style.transform="scale(1)"
+        })
             container.appendChild(tarjeta);
         });
     }

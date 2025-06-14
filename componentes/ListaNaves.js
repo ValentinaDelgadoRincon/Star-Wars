@@ -103,7 +103,7 @@ class ListaNaves extends HTMLElement{
             `;
             contador = contador + 1;
             container.appendChild(tarjetas);
-        })
+        });
     }
     renderTarjetas(naves){
         let contador = 0;
@@ -119,6 +119,13 @@ class ListaNaves extends HTMLElement{
             <p><strong>Creador:</strong> ${nave.manufacturer}</p>
             <p><strong>Pasajeros:</strong> ${nave.passengers}</p>
             `;
+            tarjeta.addEventListener("mouseover",()=>{
+                tarjeta.style.transform="scale(1.05)";
+                tarjeta.style.transition="transform 0.3s ease";
+            });
+            tarjeta.addEventListener("mouseout",()=>{
+                tarjeta.style.transform="scale(1)";
+            })
             contador = contador + 1;
             container.appendChild(tarjeta);
         });
