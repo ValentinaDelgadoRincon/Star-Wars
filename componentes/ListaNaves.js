@@ -79,7 +79,24 @@ class ListaNaves extends HTMLElement{
     width:100%
     }
    
-    
+    @media(max-width:800px){
+
+        .contenedor{
+        padding:0%;
+    }
+        .nave-espa-tarjeta{
+        grid-template-columns: 1fr 1fr 1fr;
+        padding:0vh;
+        gap:10px;
+    }
+        .nave-tarjeta{
+            padding:0vh;
+        }
+        .nave-tarjeta img{
+        width:80%;
+        padding:1vh;
+    }
+    }
         </style>
         <div class="contenedor">
             <div class="nave-espa-tarjeta" id="naves-container"></div>

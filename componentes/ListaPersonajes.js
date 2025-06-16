@@ -94,6 +94,31 @@ class ListaPersonajes extends HTMLElement {
         border: 2px solid white;
         border-radius: 8px;
     }
+    @media (max-width: 800px){
+        .espacio-tarjeta{
+        display:grid;
+        grid-template-columns:1fr;
+        gap:16px;
+        padding:0;
+        padding:0vh;
+        width:50%;
+        }
+        .video video {
+        width: 100%;
+        max-width: 400px;
+        border: 2px solid white;
+        border-radius: 8px;
+    }
+        .tarjetas h3{
+        font-size:10px
+        color:yellow;
+    }
+        .tarjetas p{
+        margin: 4px 0;
+        font-size:10px;
+        color: white;
+        }
+    }
     </style>
         <div class="contenedor">
             <div class="espacio-tarjeta" id="user-container"></div>

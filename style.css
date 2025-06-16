@@ -668,15 +668,27 @@ input[type="radio"] {
     .planetas h2 {
         margin-top: 3vh;
     }
+    .deslizar {
+    height: 40vh;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
 
-    .carrusel img {
-        width: 30vw;
-    }
 
-    .carrusel-3 {
-        width: 90vw;
-    }
-    
+#slide1:checked ~ .slider {
+  transform: translateX(0%);
+}
+#slide2:checked ~ .slider {
+  transform: translateX(-40%);
+}
+#slide3:checked ~ .slider {
+  transform: translateX(-80%);
+}
+#slide4:checked ~ .slider {
+  transform: translateX(-120%);
+}
+
+
 } 
 .seccion {
     height: 0;

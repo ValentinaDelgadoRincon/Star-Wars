@@ -82,7 +82,18 @@ class ListaPlanetas extends HTMLElement {
     .planeta-tarjeta img{
     width:100%
     }
-   
+    @media(max-width:800px){
+
+        .contenedor{
+        padding:0vh;
+    }
+        .planeta-espa-tarjeta{
+        display:grid;
+        grid-template-columns:1fr 1fr 1fr  ;
+        padding:0;
+        padding:0vh;
+        }
+    }
     
         </style>
         <div class="contenedor">
