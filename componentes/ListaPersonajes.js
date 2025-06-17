@@ -67,6 +67,9 @@ class ListaPersonajes extends HTMLElement {
     border:1px solid #ccc;
     color:yellow;
     line-height: 1rem;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
     }
     border-radius:8px;
     padding:16px;
